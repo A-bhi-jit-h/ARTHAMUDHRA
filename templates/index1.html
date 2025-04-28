@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignSpeech - Sign Language Translator</title>
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link rel="icon" type="image/x-icon" href="../static/favicon.ico">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(300deg, #386641, #6a994e, #a7c957);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s ease infinite;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        @keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 50px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #f8f9fa;
+            text-decoration: underline;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: #6a994e;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero-image {
+            width: 400px;
+            height: 400px;
+            margin: 30px auto;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .quote {
+            font-style: italic;
+            color: #6a994e;
+            font-size: 1.5rem;
+            margin: 30px auto;
+            max-width: 800px;
+            padding: 20px;
+            border-left: 4px solid #6a994e;
+            background-color: rgba(53, 152, 66, 0.05);
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 30px 60px;
+            font-size: 2rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+        
+        .btn-primary {
+            background-color: #386641;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color:#6a994e;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px #a7c957;
+        }
+        
+        .btn-secondary {
+            background-color: #ff9f1c;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #f08c00;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 159, 28, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        .a1{
+            font-size: 20px;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p, .quote {
+                font-size: 1rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo fw-bold" >ARTHAMUDRA</div>
+                <ul class="nav-links">
+                    <li class="a1"><a href="{{ url_for('home') }}">Home</a></li>
+                    <li class="a1"><a href="{{ url_for('about') }}">About</a></li>
+                    <li class="a1"><a href="{{ url_for('sign') }}">Sign Language</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Breaking Communication Barriers</h1>
+            <p>Transform malayalam sign language into text in real-time with our cutting-edge AI technology.</p>
+            
+            <img src="../static/WhatsApp Image 2025-04-03 at 10.14.32_e12a8a0d.jpg" alt="Sign Language Translator Demo" class="hero-image" height="150" width="350">
+            
+            <div class="quote">
+                "Language connects us all. With Arthamudra, we're making those connections accessible to everyone."
+            </div>
+            
+            <p>Our innovative technology helps bridge the gap between malayalam sign language users and the hearing world, making communication seamless and inclusive.</p>
+            
+            <div class="action-buttons">
+                <button class="btn btn-primary" onclick="openCameraTab()">Translate Now</button>
+            </div>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Arthamudra. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openCameraTab() {
+            window.open('/camera', '_blank');  // Opens the live translation page in a new tab
+        }
+    </script>
+
+</body>
+</html>

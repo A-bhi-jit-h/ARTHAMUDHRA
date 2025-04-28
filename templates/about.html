@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About SPARSHA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-green-100">
+    <div class="max-w-4xl mx-auto p-6">
+        <div class="bg-white p-8 rounded-2xl shadow-lg">
+            <h1 class="text-4xl font-bold text-center text-green-600">ARTHAMUDRA</h1>
+            <p class="text-gray-700 text-lg text-center mt-2">Malayalam Sign Language Translator</p>
+            
+            <div class="mt-6">
+                <p class="text-gray-600 text-justify">
+                    ARTHAMUDRA is an advanced Malayalam Sign Language (MSL) translation platform designed to bridge the communication gap between the hearing-impaired community and the wider society. Using cutting-edge deep learning models, ARTHAMUDRA translates Malayalam Sign Language gestures into text, enabling seamless interaction and accessibility.
+                </p>
+            </div>
+            
+            <div class="mt-6">
+                <h2 class="text-2xl font-semibold text-green-500">Features</h2>
+                <ul class="list-disc pl-6 mt-2 text-gray-700">
+                    <li>Real-time sign language recognition</li>
+                    <li>Accurate translation of Malayalam Sign Language</li>
+                    <li>Easy-to-use web-based interface</li>
+                    <li>Flask-powered backend for seamless processing</li>
+                </ul>
+            </div>
+            
+            <div class="mt-6">
+                <h2 class="text-2xl font-semibold text-green-500">Our Mission</h2>
+                <p class="text-gray-600 text-justify">
+                    We aim to create an inclusive society where individuals with hearing impairments can communicate effortlessly using Malayalam Sign Language. By leveraging AI and machine learning, SPARSHA empowers users with real-time translation and enhances accessibility.
+                </p>
+            </div>
+            
+            <div class="mt-6 text-center">
+                <a href="{{ url_for('home') }}" class="px-6 py-2 bg-green-600 text-white rounded-lg shadow-md hover:bg-green-700">Go to Home</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

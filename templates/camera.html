@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARTHAMUDRA - Live Translation</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #6a994e;
+            font-size: 3rem;
+            margin-top: 20px;
+        }
+
+        .camera-feed {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60vh;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px;
+            transition: 0.3s;
+        }
+
+        .btn-danger {
+            background-color: #d9534f;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #c9302c;
+        }
+
+        .btn-warning {
+            background-color: #f0ad4e;
+            color: white;
+        }
+
+        .btn-warning:hover {
+            background-color: #ec971f;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(300deg, #386641, #6a994e, #a7c957);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s ease infinite;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        @keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 50px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #f8f9fa;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo fw-bold" >ARTHAMUDRA</div>
+                <ul class="nav-links">
+                    <li><a href="{{ url_for('home') }}">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Sign Language</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="camera-feed">
+        <img src="{{ url_for('camera_feed') }}" alt="Live Camera Feed">
+    </div>
+
+    <div class="buttons">
+        <button class="btn btn-danger" onclick="window.location.href='/stop_camera'">Stop Camera</button>
+        <button class="btn btn-warning" onclick="window.location.href='/clear_text'">Clear Text</button>
+    </div>
+</body>
+</html>

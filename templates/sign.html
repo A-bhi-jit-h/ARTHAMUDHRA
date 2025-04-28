@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malayalam Sign Language</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            margin: 0;
+            padding: 0;
+        }
+        .containers {
+            max-width: 900px;
+            margin: 20px auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 100, 0, 0.2);
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        h1 {
+            color: #1b5e20;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .card {
+            background: #a5d6a7;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 100, 0, 0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+        h2 {
+            margin-top: 10px;
+            font-size: 18px;
+            color: #1b5e20;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        le>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        /* Header Styles */
+        header {
+            background: linear-gradient(300deg, #386641, #6a994e, #a7c957);
+            background-size: 180% 180%;
+            animation: gradient-animation 18s ease infinite;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        @keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .a1{
+            font-size: 20px;
+        }
+        .logo {
+            font-size: 50px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: #f8f9fa;
+            text-decoration: underline;
+        }
+        .update {
+        color: rgb(230, 9, 9);
+        font-size: 2em;
+        font-weight: bold;
+        animation: blink 2s infinite;
+    }
+
+    @keyframes blink {
+        0% { opacity: 1; }
+        50% { opacity: 0; }
+        100% { opacity: 1; }
+    }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo fw-bold" >ARTHAMUDRA</div>
+                <ul class="nav-links">
+                    <li class="a1"><a href="{{ url_for('home') }}">Home</a></li>
+                    <li class="a1"><a href="{{ url_for('about') }}">About</a></li>
+                    <li class="a1"><a href="{{ url_for('sign') }}">Sign Language</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+     
+    <div class="containers">
+        <h1 class="logo fw-bold">Malayalam Sign Language Guide</h1>
+        <div class="grid">
+            <div class="card">
+                <img src="../static/signs/Aa.jpg" alt="Sign for A">
+                <h2>അ </h2>
+            </div>
+            <div class="card">
+                <img src="../static/signs/Aah.jpg" alt="Sign for B">
+                <h2>ആ</h2>
+            </div>
+            <div class="card">
+                <img src="../static/signs/E.jpg" alt="Sign for N">
+                <h2>ഇ</h2>
+            </div>
+            <div class="card">
+                <img src="../static/signs/U.jpg" alt="Sign for P">
+                <h2>ഉ</h2>
+            </div>
+            <div class="card">
+                <img src="../static/signs/Ir.jpg" alt="Sign for X">
+                <h2>ഋ</h2>
+            </div>
+            <div class="card">
+                <img src="../static/signs/A.jpg" alt="Sign for Space">
+                <h2>എ</h2>
+            </div>
+        </div>
+    </div>
+    <div >
+        <h1 class="update">REST OF THE SIGN LANGUAGE WILL BE UPDATED SOON!!!</h1>
+    </div>
+</body>
+</html>
