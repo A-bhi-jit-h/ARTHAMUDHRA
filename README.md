@@ -91,14 +91,6 @@
 
 ---
 
-## ✨ Future Enhancements  
-- Implement deep learning models for higher gesture recognition accuracy  
-- Extend support to dynamic (moving) gestures  
-- Add speech output for translated Malayalam text  
-- Create a mobile app version for wider accessibility  
-
----
-
 ## 🤝 Contributions  
 Contributions and suggestions are welcome!  
 Please feel free to fork this repository and submit a pull request.
